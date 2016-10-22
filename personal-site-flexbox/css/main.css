@@ -1,0 +1,562 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+/*Large Background Image*/
+/* setting your html and body tags to have 100% height and remove any margins. This will make sure 
+that our containers will take up 100% of the screen. If you are working on Firefox, you will need to 
+add a 100% width to our body tag to make sure that our flexbox property works properly.  
+  html, body{
+      height:100%;
+      width:100%;
+      margin:0;
+  } */
+
+html {
+    background-color: #222;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin; 0;
+}
+
+body {
+  background: #eee;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: - auto;
+}
+
+nav{
+  background: url('../img/hero.png'); 
+  height: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-repeat:no-repeat !important;
+  -webkit-background-size:cover !important;
+  -moz-background-size:cover !important;
+  -o-background-size:cover !important;
+  background-size:cover !important;
+  background-position:center !important;
+}
+
+nav ul{
+  list-style-type: none;
+  padding: 0;
+  justify-content: front-end;
+}
+
+nav a{
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding: 10px;
+  color: #222;
+}
+
+nav a:hover{
+  background-color #555;
+}
+
+/****** GRID ******/
+.full-width {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.half-width {
+    width: 50%;
+    float: left;
+}
+
+/* Then you need to add the flexbox property to the body tag. This tells the computer to switch the 
+body element to start using a flexible layout! 
+    body {
+      display: flex;
+    } */
+
+
+/* FLEX-LAY-OUT...You want to get the 3 divs to line up in a row and have spacing between them, 
+so let’s get started. First, add styles to the wrapper div, flex-container:
+1. give it a property of display:flex;
+2. add the justify-content property and set it to space-between
+3. add those broswer fixes that you need to add for the display:flex; property:
+4. prevent floxboxes from floating over each other, use: -webkit-flex-flow: row wrap; 
+5. add spacing between the 3 flex items with: justify-content:space-between; 
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;   */
+
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    justify-content:space-between;
+    font-weight: bold;  
+    width: 100%;
+    margin: auto; 
+}
+p span {
+    font-family: 'Lora', sans-serif; 
+    font-weight: bold;
+}
+
+header, footer {
+    width: 100%; 
+    height: auto;
+    display: flex;
+    justify-content:cover;
+}
+
+h1 {
+    font-family: 'Lora', sans-serif;
+    font-size: 3em; 
+    width: 100%;
+    text-align: center;
+    display: flex;
+}
+
+/* Next, you will want to center the div. Your content is centered both horizontally and vertically!
+To do that you will want to write:
+  body {
+      display: flex;
+      justify-content:center;
+  }   */
+
+.main {
+    width: 100%; 
+    height:auto;
+    display: flex;
+    justify-content:center;
+    border-bottom: 1px solid #fff;
+}
+.main p {
+    font-size: 1.35em;
+}
+
+
+
+/* Then, you want to give our flex-items styles to center the text within the div and make them bigger:
+1. Add the display:flex; property to the .flex-item element
+2. add the browser fixes from above
+3. Give the divs a width of 30%
+4. Add the justify-content property and give it a value of “center”
+5. In order to center the content vertically as well we need to also add align-items:center;
+Your website should now look like the image below with the 3 divs beside each other, and the content 
+nicely centered within each div*/
+
+.flex-items {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    line-height: 1.5em;
+    font-size: 1em;
+    width: 30%;
+    height: auto;
+    border-bottom: 1px solid #fff;
+
+}
+
+#div-1 p, #div-2 p {
+    border-right: 1px solid #fff
+ 
+}
+.flex-items p {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+footer {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+footer i { 
+    padding:30px 20px 0 0;
+}
+
+
+/****** CONTACT ******/
+#contact .full-width {
+    padding: 110px 0;
+}
+#contact-img{
+    border: 12px solid #ffffff;
+    display: flex;
+    justify-content: left;
+}
+#contact h2, #email-header, #socialmedia-header, #contact ul {
+    padding-left: 115px;
+}
+#envelope {
+    padding: 0 10px 0 115px;
+    display: flex;
+    justify-center: right;
+}
+
+}
+#email-header{
+    font-size: 32px;
+    font-weight: 400;
+    margin: -30px 0 5px 0;
+}
+
+
+
+
+/*Flexbox is still a new property, so some older browsers do not fully support it, 
+in that case you will need to add the following:  */
+
+html {
+    width:100%;
+    height: 100%;
+    margin:0;
+}
+ 
+body {
+    display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+    display: -moz-box;      /* OLD: Firefox (buggy) */
+    display: -ms-flexbox;   /* MID: IE 10 */
+    display: -webkit-flex;  /* NEW, Chrome 21–28, Safari 6.1+ */
+    display: flex;          /* NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+ */
+    -webkit-box-align: center; -moz-box-align: center; /* OLD… */
+    -ms-flex-align: center; /* You know the drill now… */
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center; -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+ 
+}
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media all and (max-width: 400px) {
+  body {padding:1em;}
+  .flex-items {
+    flex:1 100%;
+  }
+  #div-1 p, #div-2 p {border-right: none; border-bottom: 1px solid #555;}
+  footer {display: flex; justify-content:center;}
+}
+
+nav{
+    display: flex;
+    height: 600px;
+}
+
+nav ul{
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav li{
+  justify-content: flex-end;
+flex: 1 1 0;
+}
+
+@media (min-width: 401px) and (max-width: 768px) {
+  #div-1, #div-2{
+    flex:1 50%;
+  }
+  #div-1 p, #div-2 p {border-right:none; padding-right: 30px;}
+  #div-3 {
+    flex:1 100%;
+    border-top: 1px solid #555;
+  } 
+}
+
+nav{
+    display: flex;
+}
+
+nav ul{
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav li{
+flex: 1 1 0;
+}
+
+/*---------- Desktops ----------*/
+@media (min-width: 1200px) {
+
+nav{
+    display: flex;
+}
+
+nav ul{
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav li{
+flex: 1 1 0;
+}
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
